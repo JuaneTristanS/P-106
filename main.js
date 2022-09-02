@@ -8,3 +8,30 @@ function modelLoaded() {
 function results(error, getResult) {
     console.log(results);
 }
+
+var image = document.getElementById("img");
+
+function results(error, getResult) {
+    if (error) {
+        console.error(error);
+    }
+    else {
+        console.log(getResult);
+
+        document.getElementById("sound").innerHTML = getResult[0].label;
+
+        if (getResult[0] == "Cat") {
+            image.src = "cat.jpg";
+        }
+
+        else if (getResult[0] == "Dog") {
+            image.src = "dog.jpg";
+        }
+
+        else if (getResult[0] == "Lion") {
+            image.src = "lion.jpg";
+        }
+
+    }
+
+}
